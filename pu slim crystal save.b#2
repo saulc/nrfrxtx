@@ -1713,6 +1713,31 @@ at 27/07/2012 14:02:49</description>
 </package>
 </packages>
 </library>
+<library name="con-molex">
+<description>&lt;b&gt;Molex Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="87758-0216">
+<description>&lt;b&gt;2 Pin - 2mm Dual Row Single Wafer, Vertical T/H HDR&lt;/b&gt;&lt;p&gt;
+Source: http://www.molex.com/pdm_docs/sd/877580616_sd.pdf</description>
+<wire x1="-0.85" y1="-1.9" x2="0.85" y2="-1.9" width="0.2032" layer="21"/>
+<wire x1="0.85" y1="-1.9" x2="0.85" y2="-0.4" width="0.2032" layer="21"/>
+<wire x1="0.85" y1="0.4" x2="0.85" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="0.85" y1="1.9" x2="-0.85" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="-0.85" y1="1.9" x2="-0.85" y2="0.4" width="0.2032" layer="21"/>
+<wire x1="-0.85" y1="-0.4" x2="-0.85" y2="-1.9" width="0.2032" layer="21"/>
+<wire x1="-0.85" y1="0.4" x2="-0.85" y2="-0.4" width="0.2032" layer="21" curve="-129.184564"/>
+<wire x1="0.85" y1="-0.4" x2="0.85" y2="0.4" width="0.2032" layer="21" curve="-129.184564"/>
+<pad name="1" x="0" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="2" x="0" y="1" drill="0.9" diameter="1.27"/>
+<text x="-0.65" y="-1.75" size="0.3048" layer="21" font="vector">1</text>
+<text x="-0.62" y="-3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.62" y="2.54" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.25" y1="-1.25" x2="0.25" y2="-0.75" layer="51"/>
+<rectangle x1="-0.25" y1="0.75" x2="0.25" y2="1.25" layer="51"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1950,6 +1975,12 @@ design rules under a new name.</description>
 <attribute name="OC_FARNELL" value="unknown" x="1.27" y="50.8" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="1.27" y="50.8" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
+<element name="X1" library="con-molex" package="87758-0216" value="87758-0216" x="-10.16" y="2.54">
+<attribute name="MPN" value="87758-0216" x="-10.16" y="2.54" size="1.016" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="94M1513" x="-10.16" y="2.54" size="1.016" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="-10.16" y="2.54" size="1.016" layer="27" display="off"/>
+<attribute name="MF" value="" x="-10.16" y="2.54" size="1.016" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="VCC">
@@ -2050,6 +2081,8 @@ design rules under a new name.</description>
 </polygon>
 <contactref element="POWER" pad="1"/>
 <wire x1="2.54" y1="20.32" x2="2.5400125" y2="20.32003125" width="0.254" layer="16"/>
+<contactref element="X1" pad="1"/>
+<wire x1="3.81" y1="1.27" x2="-10.16" y2="1.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCK">
 <contactref element="U1" pad="19"/>
@@ -2350,6 +2383,14 @@ design rules under a new name.</description>
 </signal>
 <signal name="NOTUSED">
 <contactref element="FTDI" pad="2"/>
+</signal>
+<signal name="D7">
+<contactref element="U1" pad="13"/>
+<contactref element="X1" pad="2"/>
+<wire x1="-10.16" y1="3.54" x2="7.62" y2="10.16" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="D4">
+<contactref element="U1" pad="6"/>
 </signal>
 </signals>
 </board>
